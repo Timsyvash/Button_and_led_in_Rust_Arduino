@@ -1,0 +1,17 @@
+[package]
+name = "Button_and_led_in_Rust_Arduino"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+arduino-hal = { git = "https://github.com/Rahix/avr-hal.git", features = ["arduino-mega2560"]}
+panic-halt = "0.2"
+
+[profile.dev]
+panic = "abort"
+opt-level = "s"  # Оптимізація розміру
+
+[profile.release]
+panic = "abort"
+opt-level = "s"
+lto = true
